@@ -108,14 +108,11 @@ class SiteController extends Controller
              */
           'oauth' => [
             'scopes'   => ['snsapi_userinfo'],
-            'callback' => '/examples/oauth_callback.php',
+            'callback' => 'in',
           ],
         ];
         $app = new Application($options);
         $oauth = $app->oauth;
-        $user = $oauth->user();
-        var_dump($user->getOriginal());
-        die;
         // 未登录
         if (empty($_SESSION['wechat_user'])) {
             $_SESSION['target_url'] = 'user/profile';
@@ -131,6 +128,11 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionIn(){
+        var_dump($_GET['code']);
+        die;
+
+    }
 //    新用户入口
     public function actionNewindex(){
         return $this->render('newindex');
