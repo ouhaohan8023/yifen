@@ -113,6 +113,9 @@ class SiteController extends Controller
         ];
         $app = new Application($options);
         $oauth = $app->oauth;
+        $user = $oauth->user();
+        var_dump($user->getOriginal());
+        die;
         // 未登录
         if (empty($_SESSION['wechat_user'])) {
             $_SESSION['target_url'] = 'user/profile';
