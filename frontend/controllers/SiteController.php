@@ -165,8 +165,8 @@ class SiteController extends Controller
 //            return $this->render('newindex');
 //        }
 
-//        $_SESSION['openid'] = $openid;
-//        return $this->render('index');
+        $_SESSION['openid'] = $openid;
+        return $this->render('index');
 
 
     }
