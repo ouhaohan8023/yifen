@@ -153,7 +153,9 @@ class SiteController extends Controller
 //获得openid
         $openid = $user['id'];
 //判断数据库中有无存储
-//        $query = YiUser::find()->where(['u_openid'=>$openid])->one();
+        $query = YiUser::find()->where(['u_openid'=>$openid])->one();
+        var_dump($query);
+        die;
         $_SESSION['openid'] = $openid;
 //        if(isset($query['u_id'])){
 //            //若存在
