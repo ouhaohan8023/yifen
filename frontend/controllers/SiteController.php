@@ -71,6 +71,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
+//    index作为入口文件,判断是否授权,若没有授权,授权;若授权,直接跳转
     public function actionIndex()
     {
          $options = [
@@ -114,18 +115,16 @@ class SiteController extends Controller
         $app = new Application($options);
         $oauth = $app->oauth;
         // 未登录
-        if (empty($_SESSION['wechat_user'])) {
-            $_SESSION['target_url'] = 'user/profile';
+        if (empty($_SESSION['openid'])) {
+//            $_SESSION['target_url'] = 'user/profile';
 //            return $oauth->redirect();
             // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
              $oauth->redirect()->send();
         }else{
-            $user = $oauth->user();
-            var_dump($user->getOriginal());
-            die;
+            return $this->render('index');
         }
 
-        return $this->render('index');
+//        return $this->render('index');
     }
 
     public function actionIn(){
@@ -148,24 +147,13 @@ class SiteController extends Controller
 // 获取 OAuth 授权结果用户信息
         $user = $oauth->user();
         $user = $user->toArray();
-        var_dump($user);
-        die;
+//        var_dump($user);
+//        die;
 //获得openid
         $openid = $user['id'];
-//通过openid找到user在joomla系统内的id
-//这里应该有一张数据表用来记录joomla内用户的id和openid之间的一一对应关系
-//当用户第一次使用微信授权登录时，应该提示用户注册或者绑定已有账号，把用户的openid和用户的在joomla的id写入上述的表中
-//当用户第二次通过微信授权登录时，直接通过openid在这张表里查询到用户的id，然后生成joomla的会话
-//这里把过程省略..假设得出结果user在系统内的id为270（我joomla的管理员id）
-        $uid =270;
-        $instance = JUser::getInstance();
-        $instance->load($uid);
-        $session = JFactory::getSession();
-//生成会话
-        $session->set('user', $instance);
-        $targetUrl = 'http://【域名】/joomla/index.php';
-// 跳转到joomla首页
-        header('location:'. $targetUrl);
+        $_SESSION['openid'] = $openid;
+        return $this->render('index');
+
 
     }
 //    新用户入口
