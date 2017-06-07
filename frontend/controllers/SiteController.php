@@ -83,7 +83,7 @@ class SiteController extends Controller
 //            $_SESSION['target_url'] = 'user/profile';
 //            return $oauth->redirect();
             // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
-             $oauth->redirect()->send();
+             $oauth->redirect()->send();//跳转到in
         }else{
             return $this->render('index');
         }
