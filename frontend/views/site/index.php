@@ -215,7 +215,7 @@ $this->title = 'My Yii Application';
                 <div class="pie_left"><div class="left" id="left" style="transition: -webkit-transform 1000ms linear 1000ms; transform: rotate(28.656deg);"></div></div>
                 <div class="pie_right"><div class="right" id="right" style="transition: -webkit-transform 1000ms linear; transform: rotate(180deg);"></div></div>
                 <div class="integral-box" onclick="window.open('/ui_membercenter/memberpoints')">
-                    <span>可用积分</span>
+                    <span>服务金金额</span>
                     <span id="integral-num">2893</span>
                 </div>
             </div>
@@ -255,7 +255,7 @@ $this->title = 'My Yii Application';
         <div class="foot-lin2">
             <div class="nav1" id="nav1">
                 <img src="../../web/images/index-gift.png">
-                <span>推荐有礼</span>
+                <span>翼粉服务</span>
             </div>
 
             <div class="nav2" id="myInfo" onclick="redirectHref()">
@@ -264,7 +264,7 @@ $this->title = 'My Yii Application';
             </div>
             <div class="nav4" onclick="redictService()">
                 <img src="../../web/images/index-vip.png">
-                <span>会员服务</span>
+                <span>红包铺子</span>
             </div>
             <div class="nav3" onclick="redictOptions()">
                 <img src="../../web/images/index-talkto.png">
