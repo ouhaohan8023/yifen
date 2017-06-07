@@ -192,7 +192,7 @@ $this->title = 'My Yii Application';
     <!--上半部-->
     <section class="head-bg">
         <div class="wavebox">
-            <img src="images/wave.png">
+            <img src="../../web/images/wave.png">
 
         </div>
         <div class="head-cardnumber">

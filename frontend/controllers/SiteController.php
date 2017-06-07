@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use app\models\YiUser;
 use EasyWeChat\Foundation\Application;
 use Yii;
 use yii\base\InvalidParamException;
@@ -151,8 +152,21 @@ class SiteController extends Controller
 //        die;
 //获得openid
         $openid = $user['id'];
+//判断数据库中有无存储
+        $query = YiUser::find()->where(['u_openid'=>$openid])->one();
         $_SESSION['openid'] = $openid;
-        return $this->render('index');
+        if(isset($query['u_id'])){
+            //若存在
+            $_SESSION['u_name'] = $query['u_name'];
+            $_SESSION['u_wx_name'] = $query['u_wx_name'];
+//            $_SESSION['openid'] = $openid;
+            return $this->render('index');
+        }else{
+            return $this->render('newindex');
+        }
+
+//        $_SESSION['openid'] = $openid;
+//        return $this->render('index');
 
 
     }
