@@ -122,7 +122,7 @@ class SiteController extends Controller
             // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
              $oauth->redirect()->send();
         }else{
-            return $this->render('in');
+            return $this->render('index');
         }
 
 //        return $this->render('index');
@@ -153,17 +153,17 @@ class SiteController extends Controller
 //获得openid
         $openid = $user['id'];
 //判断数据库中有无存储
-        $query = YiUser::find()->where(['u_openid'=>$openid])->one();
+//        $query = YiUser::find()->where(['u_openid'=>$openid])->one();
         $_SESSION['openid'] = $openid;
-        if(isset($query['u_id'])){
-            //若存在
-            $_SESSION['u_name'] = $query['u_name'];
-            $_SESSION['u_wx_name'] = $query['u_wx_name'];
-//            $_SESSION['openid'] = $openid;
-            return $this->render('index');
-        }else{
-            return $this->render('newindex');
-        }
+//        if(isset($query['u_id'])){
+//            //若存在
+//            $_SESSION['u_name'] = $query['u_name'];
+//            $_SESSION['u_wx_name'] = $query['u_wx_name'];
+////            $_SESSION['openid'] = $openid;
+//            return $this->render('index');
+//        }else{
+//            return $this->render('newindex');
+//        }
 
 //        $_SESSION['openid'] = $openid;
 //        return $this->render('index');
