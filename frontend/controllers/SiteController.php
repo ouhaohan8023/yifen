@@ -97,10 +97,11 @@ class SiteController extends Controller
 // 获取 OAuth 授权结果用户信息
         $user = $oauth->user();
         $user = $user->toArray();
-//        var_dump($user);
-//        die;
+        var_dump($user);
+        die;
 //获得openid
         $openid = $user['id'];
+//        $name = $user
 //判断数据库中有无存储
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
 //        var_dump($query);

@@ -48,10 +48,10 @@ class YiUser extends \yii\db\ActiveRecord
         return [
             'u_id' => 'U ID',
             'u_openid' => 'U Openid',
-            'u_name' => 'U Name',
-            'u_wx_name' => 'U Wx Name',
-            'u_phone' => 'U Phone',
-            'u_kd' => 'U Kd',
+            'u_name' => '姓名',
+            'u_wx_name' => '微信名',
+            'u_phone' => '手机号码',
+            'u_kd' => '宽带号码',
             'u_time' => 'U Time',
             'u_last_time' => 'U Last Time',
         ];

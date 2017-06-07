@@ -6,7 +6,7 @@ $(document).ready(function(){
 	//alert(123);
 	$("#only_phone").click(function(){
 		//alert(212);
-		window.location.href="onlyphone";
+		window.location.href="../yi-user/create";
 	});
 	$("#only_kd").click(function(){
 		//alert(212);
