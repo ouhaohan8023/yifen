@@ -79,7 +79,7 @@ class SiteController extends Controller
         $app = Ouhaohan::getEasywechat();
         $oauth = $app->oauth;
         // 未登录
-        if (empty($_SESSION['openid'])) {
+        if (empty($_COOKIE['openid'])) {
 //            $_SESSION['target_url'] = 'user/profile';
 //            return $oauth->redirect();
             // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
@@ -107,8 +107,8 @@ class SiteController extends Controller
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
 //        var_dump($query);
 //        die;
-        $_SESSION['openid'] = $openid;
-        $_SESSION['name'] = $name;
+        $_COOKIE['openid'] = $openid;
+        $_COOKIE['name'] = $name;
         if(isset($query['u_id'])){
             //若存在
 //            $_SESSION['u_name'] = $query['u_name'];
@@ -133,10 +133,7 @@ class SiteController extends Controller
     }
 //    onlyphone入口
     public function actionOnlyphone(){
-        $model = new YiUser();
-        $model->u_openid = $_SESSION['openid'];
-        $model->u_wx_name = $_SESSION['name'];
-        return $this->render('onlyphone',['model'=>$model]);
+        return $this->render('onlyphone');
     }
 //    onlykd入口
     public function actionOnlykd(){
