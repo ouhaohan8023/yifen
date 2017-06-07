@@ -117,7 +117,7 @@ class SiteController extends Controller
             return $this->render('index');
         }else{
 
-            return $this->redirect(['newindex']);
+            return $this->render('newindex');
         }
 //
 //        $_SESSION['openid'] = $openid;
@@ -127,15 +127,16 @@ class SiteController extends Controller
     }
 //    新用户入口
     public function actionNewindex(){
-        $model = new YiUser();
-        $model->u_openid = $_SESSION['openid'];
-        $model->u_wx_name = $_SESSION['name'];
 
-        return $this->render('newindex',['model'=>$model]);
+
+        return $this->render('newindex');
     }
 //    onlyphone入口
     public function actionOnlyphone(){
-        return $this->render('onlyphone');
+        $model = new YiUser();
+        $model->u_openid = $_SESSION['openid'];
+        $model->u_wx_name = $_SESSION['name'];
+        return $this->render('onlyphone',['model'=>$model]);
     }
 //    onlykd入口
     public function actionOnlykd(){
