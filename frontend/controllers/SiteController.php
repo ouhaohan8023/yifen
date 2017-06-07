@@ -108,7 +108,7 @@ class SiteController extends Controller
              */
           'oauth' => [
             'scopes'   => ['snsapi_userinfo'],
-            'callback' => 'in',
+            'callback' => 'yifen/frontend/web/site/in',
           ],
         ];
         $app = new Application($options);
