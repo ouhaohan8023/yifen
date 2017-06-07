@@ -4,10 +4,10 @@
 
 $this->title = 'My Yii Application';
 ?>
-<link rel="stylesheet" href="../web/css/main.css">
-<link rel="stylesheet" href="../web/css/common-member.css">
-<link rel="stylesheet" type="text/css" href="/html/css/master.css?v=1" />
-<link rel="stylesheet" type="text/css" href="/html/css/css.css?v=2" />
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/common-member.css">
+<!--<link rel="stylesheet" type="text/css" href="/html/css/master.css?v=1" />-->
+<!--<link rel="stylesheet" type="text/css" href="/html/css/css.css?v=2" />-->
 
 <style>
     .circle {
