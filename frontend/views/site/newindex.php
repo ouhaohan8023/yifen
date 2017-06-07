@@ -20,7 +20,7 @@
 			<button id="only_phone" type="button" class="btn btn-primary btn-lg" >&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电信号码用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;</button>
 		</p>
 		<p style="text-align: center;padding-top: 20%">
-			<button id="only_web" type="button" class="btn btn-primary btn-lg">&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电信宽带用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;</button>
+			<button id="only_kd" type="button" class="btn btn-primary btn-lg">&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电信宽带用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;</button>
 		</p>
 		<p style="text-align: center;padding-top: 20%">
 			<button id="both" type="button" class="btn btn-primary btn-lg">&nbsp;<br>电信号码及宽带用户<br>&nbsp;</button>
