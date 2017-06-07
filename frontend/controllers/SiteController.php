@@ -133,6 +133,8 @@ class SiteController extends Controller
     }
 //    onlyphone入口
     public function actionOnlyphone(){
+        var_dump($_SESSION['openid']);
+        die;
         $model = new YiUser();
         $model->u_openid = $_SESSION['openid'];
         $model->u_wx_name = $_SESSION['name'];
