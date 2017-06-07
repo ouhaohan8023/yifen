@@ -5,6 +5,7 @@ use app\models\YiUser;
 use EasyWeChat\Foundation\Application;
 use Yii;
 use yii\base\InvalidParamException;
+use yii\helpers\Ouhaohan;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
@@ -75,45 +76,7 @@ class SiteController extends Controller
 //    index作为入口文件,判断是否授权,若没有授权,授权;若授权,直接跳转
     public function actionIndex()
     {
-         $options = [
-            /**
-             * Debug 模式，bool 值：true/false
-             *
-             * 当值为 false 时，所有的日志都不会记录
-             */
-          'debug'  => true,
-            /**
-             * 账号基本信息，请从微信公众平台/开放平台获取
-             */
-          'app_id'  => 'wx99c791ac5995b5e9',         // AppID
-          'secret'  => '3c1c7fad8cd8923bc037994762eff667',     // AppSecret
-          'token'   => 'ohhcms',          // Token
-          'aes_key' => '',                    // EncodingAESKey，安全模式下请一定要填写！！！
-            /**
-             * 日志配置
-             *
-             * level: 日志级别, 可选为：
-             *         debug/info/notice/warning/error/critical/alert/emergency
-             * permission：日志文件权限(可选)，默认为null（若为null值,monolog会取0644）
-             * file：日志文件位置(绝对路径!!!)，要求可写权限
-             */
-          'log' => [
-            'level'      => 'debug',
-            'permission' => 0777,
-            'file'       => '/tmp/easywechat.log',
-          ],
-            /**
-             * OAuth 配置
-             *
-             * scopes：公众平台（snsapi_userinfo / snsapi_base），开放平台：snsapi_login
-             * callback：OAuth授权完成后的回调页地址
-             */
-          'oauth' => [
-            'scopes'   => ['snsapi_userinfo'],
-            'callback' => 'yifen/frontend/web/site/in',
-          ],
-        ];
-        $app = new Application($options);
+        $app = Ouhaohan::getEasywechat();
         $oauth = $app->oauth;
         // 未登录
         if (empty($_SESSION['openid'])) {
@@ -129,21 +92,7 @@ class SiteController extends Controller
     }
 
     public function actionIn(){
-        //配置参数
-        $config = [
-          'debug'     => true,
-          'app_id'  => 'wx99c791ac5995b5e9',         // AppID
-          'secret'  => '3c1c7fad8cd8923bc037994762eff667',     // AppSecret
-          'token'   => 'ohhcms',          // Token
-          'aes_key' => '',                    // EncodingAESKey，安全模式下请一定要填写！！！
-          'log' => [
-            'level'      => 'debug',
-            'permission' => 0777,
-            'file'       => '/tmp/easywechat.log',
-          ],
-        ];
-
-        $app = new Application($config);
+        $app = Ouhaohan::getEasywechat();
         $oauth = $app->oauth;
 // 获取 OAuth 授权结果用户信息
         $user = $oauth->user();
@@ -174,6 +123,7 @@ class SiteController extends Controller
     }
 //    新用户入口
     public function actionNewindex(){
+
         return $this->render('newindex');
     }
 //    onlyphone入口
