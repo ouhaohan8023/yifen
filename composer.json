@@ -1,0 +1,6 @@
+{
+    "require": {
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "mdmsoft/yii2-admin": "~2.0"
+    }
+}
