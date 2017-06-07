@@ -97,24 +97,29 @@ class SiteController extends Controller
 // 获取 OAuth 授权结果用户信息
         $user = $oauth->user();
         $user = $user->toArray();
-        var_dump($user);
-        die;
+//        var_dump($user);
+//        die;
 //获得openid
         $openid = $user['id'];
-//        $name = $user
+        $name = $user['name'];
+        $avatar = $user['avatar'];
 //判断数据库中有无存储
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
 //        var_dump($query);
 //        die;
         $_SESSION['openid'] = $openid;
+        $_SESSION['name'] = $name;
         if(isset($query['u_id'])){
             //若存在
-            $_SESSION['u_name'] = $query['u_name'];
-            $_SESSION['u_wx_name'] = $query['u_wx_name'];
+//            $_SESSION['u_name'] = $query['u_name'];
+//            $_SESSION['u_wx_name'] = $query['u_wx_name'];
 //            $_SESSION['openid'] = $openid;
             return $this->render('index');
         }else{
-            return $this->render('newindex');
+            $model = new YiUser();
+            $model->u_openid = $openid;
+            $model->u_wx_name = $name;
+            return $this->render('newindex',['model'=>$model]);
         }
 //
 //        $_SESSION['openid'] = $openid;
