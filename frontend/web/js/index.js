@@ -35,7 +35,7 @@ $(document).ready(function(){
 		//var jifen = document.getElementById('integral-num').value;
 		//alert(jifen);
 		//总积分
-		var totle = '20000';
+		var totle = '10000';
 		//现有积分
 		//alert(jifen);
 		var dqnum = jifen;
