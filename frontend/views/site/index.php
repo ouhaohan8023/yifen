@@ -277,12 +277,8 @@ $this->title = 'My Yii Application';
         </div>
     </section>
     <!--下半部-->
-
-</article>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    Launch demo modal
-</button>
+    <input id="" value="<?= $phone?>" hidden="hidden"/>
+    <input id="" value="<?= $kd?>" hidden="hidden"/>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

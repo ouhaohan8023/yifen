@@ -2,6 +2,9 @@
  * Created by ouhaohan on 17/6/6.
  */
 $(document).ready(function(){
+	var phone = $('#phone').val;
+	var kd = $('#kd').val;
+	alert(kd);
 	$('#myModal').modal();
 });
 	function redirectHref() {
