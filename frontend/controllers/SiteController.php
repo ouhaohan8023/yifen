@@ -143,6 +143,7 @@ class SiteController extends Controller
                     return $this->goHome();
                 }
             }else{
+                header("Content-type:text/html;charset=utf-8");
                 var_dump('111');
                 var_dump($model->errors);die;
             }
