@@ -4,9 +4,20 @@
 $(document).ready(function(){
 	var phone = $('#phone').val();
 	var kd = $('#kd').val();
+	var jifen = $('#integral-num').val();
 	//window.location.href="../site/newindex";
 	if(phone == " "&&kd==" "){
 		$('#myModal').modal({backdrop: 'static', keyboard: false})
+	}
+
+	if(jifen>180){
+		var d1 = jifen;
+		$('.pie_right').css({transform:"rotate("+d1+"deg)"});
+	}else{
+		var d2 = jifen-180;
+		$('.pie_left').css({transform:"rotate(180deg)"});
+		$('.pie_right').css({transform:"rotate("+d2+"deg)"});
+
 	}
 
 	$('#bangding').click(function(){
