@@ -115,11 +115,11 @@ class SiteController extends Controller
             $number = $model->u_id;
             $phone = $model->u_phone;
             $kd = $model->u_kd;
-//            if(!$model->save()) {
-//                var_dump($model->errors);die;
-//            }else{
-//                var_dump($model->u_id);die;
-//            }
+            if(!$model->save()) {
+                var_dump($model->errors);die;
+            }else{
+                var_dump($model->u_id);die;
+            }
         }else{
             $number = $query['u_id'];
             $phone = $query['u_phone'];
