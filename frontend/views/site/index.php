@@ -278,7 +278,7 @@ $this->title = 'My Yii Application';
     </section>
     <!--下半部-->
     <input id="phone" value="<?= $phone?>" hidden="hidden"/>
-    <input id="kd" value="<?= $kd?>" hidden="hidden"/>
+    <input id="kd" value="<?= $kd?>" />
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
