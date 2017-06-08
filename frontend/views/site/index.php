@@ -286,10 +286,10 @@ $this->title = '个人中心';
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">绑定</h4>
+<!--                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>-->
+                <h4 class="modal-title" id="myModalLabel" style="font-size: 16px">身份绑定</h4>
             </div>
-            <div class="modal-body" style="font-size: 18px">
+            <div class="modal-body" style="font-size: 16px">
                 请先绑定您的信息,这样我们才能更好的为您服务哟!
             </div>
             <div class="modal-footer">

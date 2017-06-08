@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var kd = $('#kd').val();
 	//window.location.href="../site/newindex";
 	if(phone == 0&&kd==0){
-		$('#myModal').modal('show')
+		$('#myModal').modal({backdrop: 'static', keyboard: false})
 	}
 
 	$('#bangding').click(function(){
