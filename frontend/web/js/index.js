@@ -1,6 +1,9 @@
 /**
  * Created by ouhaohan on 17/6/6.
  */
+$(document).ready(function(){
+	$('#myModal').modal();
+});
 	function redirectHref() {
 		if ('' == "" || '' == null) {
 			window.location.href = "/UI_MemberCenter/MyPersonBaseInfo?openid=" + $('#OpenId').val();

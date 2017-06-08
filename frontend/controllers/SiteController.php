@@ -108,6 +108,8 @@ class SiteController extends Controller
             $model->u_wx_name = $nickname;
             $model->save();
             $number = $model->u_id;
+            $phone = '';
+            $kd = '';
 //            if(!$model->save()) {
 //                var_dump($model->errors);die;
 //            }else{
@@ -115,8 +117,10 @@ class SiteController extends Controller
 //            }
         }else{
             $number = $query['u_id'];
+            $phone = $query['u_phone'];
+            $kd = $query['u_kd'];
         }
-        return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl,'number'=>$number]);
+        return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl,'number'=>$number,'phone'=>$phone,'kd'=>$kd]);
     }
 //未登陆情况下,进行授权登陆
     public function actionIn(){
