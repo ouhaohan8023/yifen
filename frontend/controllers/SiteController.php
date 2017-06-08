@@ -148,7 +148,6 @@ class SiteController extends Controller
               ]);
             $model = new LoginForm();
             if ($model->load($array) && $model->login()) {
-                var_dump('登陆成功');die;
             }else{
                 var_dump('登陆失败');die;
             }
@@ -176,25 +175,11 @@ class SiteController extends Controller
         }
 //判断数据库中有无存储
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
-//        var_dump($query);
-//        die;
-        $_SESSION['openid'] = $openid;
-        $_SESSION['name'] = $name;
         if(isset($query['u_id'])){
-            //若存在
-//            $_SESSION['u_name'] = $query['u_name'];
-//            $_SESSION['u_wx_name'] = $query['u_wx_name'];
-//            $_SESSION['openid'] = $openid;
-//            return $this->render('index');
             return $this->redirect(['home', 'openid' => $openid]);
-
         }else{
-
             return $this->render('newindex');
         }
-//
-//        $_SESSION['openid'] = $openid;
-//        return $this->render('index');
 
 
     }
