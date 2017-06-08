@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use app\models\YiUser;
 use app\models\YiUserSearch;
+use yii\helpers\Ouhaohan;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
