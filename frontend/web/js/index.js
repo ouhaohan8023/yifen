@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var phone = $('#phone').val();
 	var kd = $('#kd').val();
 	//window.location.href="../site/newindex";
-	if(phone == 0&&kd==0){
+	if(phone == ""&&kd==""){
 		$('#myModal').modal({backdrop: 'static', keyboard: false})
 	}
 

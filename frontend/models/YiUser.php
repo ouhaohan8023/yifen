@@ -33,7 +33,7 @@ class YiUser extends \yii\db\ActiveRecord
     {
         return [
             [['u_openid', 'u_wx_name'], 'required'],
-            [['u_openid', 'u_wx_name'], 'string', 'max' => 255],
+            [['u_openid', 'u_wx_name'], 'string', 'max' => 50],
         ];
     }
 
