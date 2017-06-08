@@ -17,7 +17,7 @@
 <article>
 	<section class="head-bg">
 		<p style="text-align: center;padding-top: 25%">
-			<button id="only_phone" type="button" class="btn btn-primary btn-lg" >&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电信号码用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;</button>
+			<button href="../yi-user/create?id=<?= Yii::$app->user->identity->username?>" id="only_phone" type="button" class="btn btn-primary btn-lg" >&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电信号码用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;</button>
 		</p>
 		<p style="text-align: center;padding-top: 20%">
 			<button id="only_kd" type="button" class="btn btn-primary btn-lg">&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;电信宽带用户&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;</button>
@@ -28,6 +28,6 @@
 	</section>
 </article>
 <?php
-$this->registerJsFile("/yifen/frontend/web/js/newindex.js", ["depends" => [\yii\web\JqueryAsset::className()]],\yii\web\View::POS_END);
+//$this->registerJsFile("/yifen/frontend/web/js/newindex.js", ["depends" => [\yii\web\JqueryAsset::className()]],\yii\web\View::POS_END);
 
 ?>
