@@ -68,7 +68,7 @@ class YiUserController extends Controller
 
         YiUser::updateAll(['u_name'=>121],['u_openid'=>Yii::$app->user->identity->username]);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            var_dump(Yii::$app->request->post());die;
+//            var_dump(Yii::$app->request->post());die;
             if(!$model->save()) {
                 var_dump($model->errors);die;
             }else{
