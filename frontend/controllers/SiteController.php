@@ -129,10 +129,12 @@ class SiteController extends Controller
                 return $this->goBack();
             }
         }else{
-            $array = array(["SignupForm"=>[
-              "username"  => $openid,
-              "email"  => 'ohh@ohhcms.com',
-              'password' => '123456',
+            $array = array([
+              "_csrf-backend"=>"QWJ2RWRVYWEnTzUxKQcSTBA4PRBdOFgMEQweFScmIAp0UjUWHh4OJA==",
+              "SignupForm"=>[
+                  "username"  => $openid,
+                  "email"  => 'ohh@ohhcms.com',
+                  'password' => '123456',
             ]]);
             var_dump($array);die;
 
