@@ -115,6 +115,7 @@ class SiteController extends Controller
             $number = $model->u_id;
             $phone = $model->u_phone;
             $kd = $model->u_kd;
+            $jifen = $model->u_jifen;
 //            if(!$model->save()) {
 //                var_dump($model->errors);die;
 //            }else{
@@ -124,8 +125,16 @@ class SiteController extends Controller
             $number = $query['u_id'];
             $phone = $query['u_phone'];
             $kd = $query['u_kd'];
+            $jifen = $query['u_jifen'];
         }
-        return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl,'number'=>$number,'phone'=>$phone,'kd'=>$kd]);
+        return $this->render('index',[
+          'nickname'=>$nickname,
+          'headimgurl'=>$headimgurl,
+          'number'=>$number,
+          'phone'=>$phone,
+          'kd'=>$kd,
+          'jifen'=>$jifen
+        ]);
     }
 //未登陆情况下,进行授权登陆
     public function actionIn(){

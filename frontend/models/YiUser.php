@@ -15,6 +15,7 @@ use Yii;
  * @property integer $u_kd
  * @property string $u_time
  * @property string $u_last_time
+ * @property integer $u_jifen
  */
 class YiUser extends \yii\db\ActiveRecord
 {
