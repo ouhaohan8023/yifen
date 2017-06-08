@@ -6,7 +6,7 @@ $(document).ready(function(){
 	var kd = $('#kd').val();
 
 	if(kd==0&&phone==0){
-		$('#myModal').modal();
+		$('#myModal').modal('show');
 	}
 });
 	function redirectHref() {

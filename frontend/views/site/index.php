@@ -281,7 +281,7 @@ $this->title = 'My Yii Application';
     <input id="kd" value="<?= $kd?>" />
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 45%">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
