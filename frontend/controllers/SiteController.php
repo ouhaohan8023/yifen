@@ -86,7 +86,7 @@ class SiteController extends Controller
             // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
              $oauth->redirect()->send();//跳转到in
         }else{
-            return $this->redirect(['home', 'openid' => $_SESSION['openid']]);
+            return $this->redirect(['home', 'openid' => Yii::$app->user->username]);
 //            return $this->render('index');
         }
 //        return $this->render('index');
@@ -117,13 +117,12 @@ class SiteController extends Controller
         $avatar = $user['avatar'];
         $data = User::find()->where(['username'=>$openid])->one();
         if(isset($data['id'])){//账号存在
-            $array =  [
-//              ["_csrf-backend"]=>"QWJ2RWRVYWEnTzUxKQcSTBA4PRBdOFgMEQweFScmIAp0UjUWHh4OJA==",
-              ["LoginForm"]=> [
-                ["username"]=> "ouhaohan",
-                ["password"]=> "mushroom1117",
-              ]
-            ];
+            $array = array(
+              "_csrf-backend"=>"QWJ2RWRVYWEnTzUxKQcSTBA4PRBdOFgMEQweFScmIAp0UjUWHh4OJA==",
+              "SignupForm"=>[
+                "username"  => $openid,
+                'password' => '123456',
+              ]);
             $model = new LoginForm();
             if ($model->load($array) && $model->login()) {
                 return $this->goBack();
