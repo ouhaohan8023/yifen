@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use app\models\YiLiuyan;
 use app\models\YiLiuyanSearch;
+use yii\helpers\Ouhaohan;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -64,6 +65,14 @@ class YiLiuyanController extends Controller
     public function actionCreate()
     {
         $model = new YiLiuyan();
+        $app = Ouhaohan::getEasywechat();
+        $oauth = $app->oauth;
+// 获取 OAuth 授权结果用户信息
+        $user = $oauth->user();
+        $user = $user->toArray();
+//获得openid
+        $model->u_openid = $user['id'];
+        $model->u_wx_name = $user['name'];
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->l_id]);

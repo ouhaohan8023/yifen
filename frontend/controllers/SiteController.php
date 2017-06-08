@@ -79,18 +79,28 @@ class SiteController extends Controller
         $app = Ouhaohan::getEasywechat();
         $oauth = $app->oauth;
         // 未登录
-        if (empty($_COOKIE['openid'])) {
+        if (empty($_SESSION['openid'])) {
 //            $_SESSION['target_url'] = 'user/profile';
 //            return $oauth->redirect();
             // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
              $oauth->redirect()->send();//跳转到in
         }else{
-            return $this->render('index');
+            return $this->redirect(['home', 'openid' => $_SESSION['openid']]);
+//            return $this->render('index');
         }
-
 //        return $this->render('index');
     }
-
+//跳转到个人中心
+    public function actionHome($openid){
+        $app = Ouhaohan::getEasywechat();
+        $oauth = $app->oauth;
+        // 获取 OAuth 授权结果用户信息
+        $user = $oauth->user();
+        $nickname = $user['name'];
+        $avatar = $user['avatar'];
+        return $this->render('index',['nickname'=>$nickname,'avatar'=>$avatar]);
+    }
+//未登陆情况下,进行授权登陆
     public function actionIn(){
         $app = Ouhaohan::getEasywechat();
         $oauth = $app->oauth;
@@ -107,14 +117,16 @@ class SiteController extends Controller
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
 //        var_dump($query);
 //        die;
-        $_COOKIE['openid'] = $openid;
-        $_COOKIE['name'] = $name;
+        $_SESSION['openid'] = $openid;
+        $_SESSION['name'] = $name;
         if(isset($query['u_id'])){
             //若存在
 //            $_SESSION['u_name'] = $query['u_name'];
 //            $_SESSION['u_wx_name'] = $query['u_wx_name'];
 //            $_SESSION['openid'] = $openid;
-            return $this->render('index');
+//            return $this->render('index');
+            return $this->redirect(['home', 'openid' => $openid]);
+
         }else{
 
             return $this->render('newindex');
@@ -127,8 +139,6 @@ class SiteController extends Controller
     }
 //    新用户入口
     public function actionNewindex(){
-
-
         return $this->render('newindex');
     }
 //    onlyphone入口

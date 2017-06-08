@@ -68,8 +68,8 @@ class YiUserController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->u_id]);
         } else {
-            $model->u_openid = $_COOKIE['openid'];
-            $model->u_wx_name = $_COOKIE['name'];
+            $model->u_openid = $_SESSION['openid'];
+            $model->u_wx_name = $_SESSION['name'];
             return $this->render('create', [
                 'model' => $model,
             ]);
