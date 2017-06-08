@@ -137,7 +137,7 @@ $(function () {
 
 		if (num <= 180) {
 			window.setTimeout(function () {
-				right.style.webkitTransform = "rotate(" + 0 + "deg)";
+				right.style.webkitTransform = "rotate(60deg)";
 				movecircular.style.webkitTransform = "rotate(" + num + "deg)";
 
 				cardlv.style.webkitTransform = "rotate(" + (-num) + "deg)";
