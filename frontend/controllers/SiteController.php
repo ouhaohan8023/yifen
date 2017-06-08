@@ -2,6 +2,7 @@
 namespace frontend\controllers;
 
 use app\models\YiUser;
+use common\models\User;
 use EasyWeChat\Foundation\Application;
 use Yii;
 use yii\base\InvalidParamException;
@@ -79,7 +80,7 @@ class SiteController extends Controller
         $app = Ouhaohan::getEasywechat();
         $oauth = $app->oauth;
         // 未登录
-        if (empty($_SESSION['openid'])) {
+        if (Yii::$app->user->isGuest) {
 //            $_SESSION['target_url'] = 'user/profile';
 //            return $oauth->redirect();
             // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
@@ -113,6 +114,23 @@ class SiteController extends Controller
         $openid = $user['id'];
         $name = $user['name'];
         $avatar = $user['avatar'];
+        $data = User::find()->where(['username'=>$openid])->one();
+        if(isset($data['id'])){//账号存在
+            $array =  [
+//              ["_csrf-backend"]=>"QWJ2RWRVYWEnTzUxKQcSTBA4PRBdOFgMEQweFScmIAp0UjUWHh4OJA==",
+              ["LoginForm"]=> [
+                ["username"]=> "ouhaohan",
+                ["password"]=> "mushroom1117",
+              ]
+            ];
+            $model = new LoginForm();
+            if ($model->load($array) && $model->login()) {
+                return $this->goBack();
+            }
+        }else{
+            $model = new User();
+            $model->username = $openid;
+        }
 //判断数据库中有无存储
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
 //        var_dump($query);
@@ -230,6 +248,7 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
+            var_dump(Yii::$app->request->post());die;
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome();
