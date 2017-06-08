@@ -20,96 +20,6 @@ $(document).ready(function(){
 	//
 	//}
 
-	$('#bangding').click(function(){
-		window.location.href="../site/newindex";
-	})
-});
-	function redirectHref() {
-		if ('' == "" || '' == null) {
-			window.location.href = "/UI_MemberCenter/MyPersonBaseInfo?openid=" + $('#OpenId').val();
-		}
-		else {
-			window.location.href = "/UI_MemberCenter/MyPersonalDataDetail?openid=" + $('#OpenId').val();
-		}
-	}
-function redirectAddress(href) {
-	window.location.href = href;
-}
-function redictOptions() {
-	window.location.href = "/Options/Feedback?openId=" + $('#OpenId').val();
-}
-function redictService() {
-	window.location.href = "/WechatHuayuClub/Newlist/";
-}
-$(function () {
-	$(".bar_code").click(function () {
-		$("#b1").attr("src", $("#b1").attr("src") + "&radn=" + Math.random());
-		$("#q1").attr("src", $("#q1").attr("src") + "&radn=" + Math.random());
-		$("#Eject").removeClass("dn");
-	});
-
-	$("#Eject").click(function () {
-		$("#Eject").addClass("dn");
-	});
-});
-	function timer() {
-		var postData = {
-			"barCode": $("#barCode").val()
-		};
-		postData = (function (obj) { // 转成post需要的字符串.
-			var str = "";
-
-			for (var prop in obj) {
-				str += prop + "=" + obj[prop] + "&"
-			}
-			return str;
-		})(postData);
-
-		var xhr = new XMLHttpRequest();
-		xhr.open("POST", "/UI_MemberCenter/GetBarCode", true);
-		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhr.onreadystatechange = function () {
-			var XMLHttpReq = xhr;
-			if (XMLHttpReq.readyState == 4) {
-				if (XMLHttpReq.status == 200) {
-					var text = XMLHttpReq.responseText;
-
-					console.log(text);
-				}
-			}
-		};
-		xhr.send(postData);
-
-		var xhr1 = new XMLHttpRequest();
-		xhr1.open("POST", "/UI_MemberCenter/QrCode", true);
-		xhr1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhr1.onreadystatechange = function () {
-			var XMLHttpReq = xhr1;
-			if (XMLHttpReq.readyState == 4) {
-				if (XMLHttpReq.status == 200) {
-					var text = XMLHttpReq.responseText;
-
-					console.log(text);
-				}
-			}
-		};
-		xhr1.send(postData);
-	}
-function Refresh() {
-	var barCode = $("#barCode").val();
-	if (barCode!=undefined) {
-		if (barCode.length > 0) {
-			timer();
-		}
-	}
-
-
-}
-setInterval(Refresh, 120000); //两分钟刷一下
-
-var SignInFlag = false;
-var phone = '13303465840';
-$(function () {
 	var cardlvtext=$('#cardlv').text();
 	if(cardlvtext=='至尊钻石卡'){
 		$('#cardlv').text('至尊卡');
@@ -121,8 +31,8 @@ $(function () {
 		var baoji = document.getElementById('baoji');
 		var movecircular = document.getElementById('movecircular');
 		var baojicircle = document.getElementById('baojicircle');
-		var jifen = document.getElementById('integral-num').value;
-		alert(jifen);
+		//var jifen = document.getElementById('integral-num').value;
+		//alert(jifen);
 		//总积分
 		var totle = '20000';
 		//现有积分
@@ -271,6 +181,99 @@ $(function () {
 			}
 		});
 	}
+
+
+
+	$('#bangding').click(function(){
+		window.location.href="../site/newindex";
+	})
+});
+	function redirectHref() {
+		if ('' == "" || '' == null) {
+			window.location.href = "/UI_MemberCenter/MyPersonBaseInfo?openid=" + $('#OpenId').val();
+		}
+		else {
+			window.location.href = "/UI_MemberCenter/MyPersonalDataDetail?openid=" + $('#OpenId').val();
+		}
+	}
+function redirectAddress(href) {
+	window.location.href = href;
+}
+function redictOptions() {
+	window.location.href = "/Options/Feedback?openId=" + $('#OpenId').val();
+}
+function redictService() {
+	window.location.href = "/WechatHuayuClub/Newlist/";
+}
+$(function () {
+	$(".bar_code").click(function () {
+		$("#b1").attr("src", $("#b1").attr("src") + "&radn=" + Math.random());
+		$("#q1").attr("src", $("#q1").attr("src") + "&radn=" + Math.random());
+		$("#Eject").removeClass("dn");
+	});
+
+	$("#Eject").click(function () {
+		$("#Eject").addClass("dn");
+	});
+});
+	function timer() {
+		var postData = {
+			"barCode": $("#barCode").val()
+		};
+		postData = (function (obj) { // 转成post需要的字符串.
+			var str = "";
+
+			for (var prop in obj) {
+				str += prop + "=" + obj[prop] + "&"
+			}
+			return str;
+		})(postData);
+
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST", "/UI_MemberCenter/GetBarCode", true);
+		xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhr.onreadystatechange = function () {
+			var XMLHttpReq = xhr;
+			if (XMLHttpReq.readyState == 4) {
+				if (XMLHttpReq.status == 200) {
+					var text = XMLHttpReq.responseText;
+
+					console.log(text);
+				}
+			}
+		};
+		xhr.send(postData);
+
+		var xhr1 = new XMLHttpRequest();
+		xhr1.open("POST", "/UI_MemberCenter/QrCode", true);
+		xhr1.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhr1.onreadystatechange = function () {
+			var XMLHttpReq = xhr1;
+			if (XMLHttpReq.readyState == 4) {
+				if (XMLHttpReq.status == 200) {
+					var text = XMLHttpReq.responseText;
+
+					console.log(text);
+				}
+			}
+		};
+		xhr1.send(postData);
+	}
+function Refresh() {
+	var barCode = $("#barCode").val();
+	if (barCode!=undefined) {
+		if (barCode.length > 0) {
+			timer();
+		}
+	}
+
+
+}
+setInterval(Refresh, 120000); //两分钟刷一下
+
+var SignInFlag = false;
+var phone = '13303465840';
+$(function () {
 
 });
 
