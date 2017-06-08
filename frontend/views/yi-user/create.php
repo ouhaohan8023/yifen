@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="yi-user-form">
 
-        <?php $form = ActiveForm::begin(['action' => ['test/getpost'],'method'=>'post','options'=>['class' => 'inputwidth'],]); ?>
+        <?php $form = ActiveForm::begin(['options'=>['class' => 'inputwidth'],]); ?>
 
         <?= $form->field($model, 'u_openid')->textInput(['maxlength' => true,])->hiddenInput()->label(false) ?>
 

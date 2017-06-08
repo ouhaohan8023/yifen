@@ -63,15 +63,16 @@ class YiUserController extends Controller
      */
     public function actionCreate()
     {
-        $model = new YiUser();
+        $query = YiUser::find()->where(['u_openid'=>Yii::$app->user->identity->username])->one();
+        $model = $this->findModel($query['u_id']);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['site/home', 'id' => $model->u_openid]);
         } else {
 //            var_dump(Yii::$app->user->isGuest);die;
 //            var_dump(Yii::$app->user->identity->username);die;
-            $model->u_openid = Yii::$app->user->identity->username;
-            $model->u_wx_name = YiUser::find()->where(['u_openid'=>$model->u_openid])->one()['u_wx_name'];
+//            $model->u_openid = Yii::$app->user->identity->username;
+//            $model->u_wx_name = YiUser::find()->where(['u_openid'=>$model->u_openid])->one()['u_wx_name'];
             return $this->render('create', [
                 'model' => $model,
             ]);
