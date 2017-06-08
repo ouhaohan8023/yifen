@@ -51,7 +51,6 @@ class YiUserController extends Controller
      */
     public function actionView($id)
     {
-        var_dump($this->findModel($id));die;
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
