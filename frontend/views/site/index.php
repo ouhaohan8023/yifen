@@ -293,7 +293,7 @@ $this->title = '个人中心';
                 请先绑定您的信息,这样我们才能更好的为您服务哟!
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+<!--                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>-->
                 <button id="bangding" type="button" class="btn btn-primary">前往绑定!</button>
             </div>
         </div>
