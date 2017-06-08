@@ -66,14 +66,14 @@ class YiUserController extends Controller
         $query = YiUser::find()->where(['u_openid'=>Yii::$app->user->identity->username])->one();
         $model = $this->findModel($query['u_id']);
 
-        YiUser::updateAll(['u_name'=>121],['u_openid'=>Yii::$app->user->identity->username]);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            YiUser::updateAll(['u_name'=>$_POST['u_name'],'u_phone'=>$_POST['u_phone']],['u_openid'=>Yii::$app->user->identity->username]);
 //            var_dump(Yii::$app->request->post());die;
-            if(!$model->save()) {
-                var_dump($model->errors);die;
-            }else{
-                var_dump($model->u_id);die;
-            }
+//            if(!$model->save()) {
+//                var_dump($model->errors);die;
+//            }else{
+//                var_dump($model->u_id);die;
+//            }
             return $this->redirect(['site/home', 'openid' => $model->u_openid]);
         } else {
 //            var_dump(Yii::$app->user->isGuest);die;
