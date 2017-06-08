@@ -16,6 +16,8 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+header("Content-type:text/html;charset=utf-8");
+
 
 /**
  * Site controller
@@ -140,18 +142,14 @@ class SiteController extends Controller
         if(isset($data['id'])){//账号存在
             $array = array(
               "_csrf-backend"=>"QWJ2RWRVYWEnTzUxKQcSTBA4PRBdOFgMEQweFScmIAp0UjUWHh4OJA==",
-              "SignupForm"=>[
+              "LoginForm"=>[
                 "username"  => $openid,
                 'password' => '123456',
               ]);
             $model = new LoginForm();
             if ($model->load($array) && $model->login()) {
-                header("Content-type:text/html;charset=utf-8");
-
                 var_dump('登陆成功');die;
             }else{
-                header("Content-type:text/html;charset=utf-8");
-
                 var_dump('登陆失败');die;
             }
         }else{
