@@ -134,7 +134,7 @@ class SiteController extends Controller
               "email"  => 'ohh@ohhcms.com',
               'password' => '123456',
             ]]);
-//            var_dump($array);die;
+            var_dump($array);die;
 
             $model = new SignupForm();
             $model->load($array);
