@@ -215,7 +215,7 @@ $this->title = '个人中心';
                 <div class="pie_left"><div class="left" id="left" style="transition: -webkit-transform 1000ms linear 1000ms; transform: rotate(0deg);"></div></div>
                 <div class="pie_right"><div class="right" id="right" style="transition: -webkit-transform 1000ms linear; transform: rotate(0deg);"></div></div>
                 <div class="integral-box" onclick="window.open('/ui_membercenter/memberpoints')">
-                    <span>服务金金额89789</span>
+                    <span>服务金金额</span>
                     <span id="integral-num"><?= $jifen?></span>
                 </div>
             </div>
