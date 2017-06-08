@@ -126,6 +126,7 @@ $(function () {
 		var jifen = $('#integral-num').val();
 
 		var dqnum = jifen;
+		alert(jifen);
 
 		var num = (dqnum * 360) / totle;
 		var baojinum = '0';
