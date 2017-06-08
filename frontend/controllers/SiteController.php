@@ -142,6 +142,8 @@ class SiteController extends Controller
                 if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome();
                 }
+            }else{
+                var_dump($model->errors);die;
             }
         }
 //判断数据库中有无存储
