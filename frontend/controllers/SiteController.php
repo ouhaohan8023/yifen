@@ -94,9 +94,11 @@ class SiteController extends Controller
 //跳转到个人中心
     public function actionHome($openid){
         $app = Ouhaohan::getEasywechat();
-        $oauth = $app->oauth;
+        $userService = $app->user;
+        $user = $userService->get($openid);
         // 获取 OAuth 授权结果用户信息
-        $user = $oauth->user();
+
+        var_dump($user);die;
         $nickname = $user['name'];
         $avatar = $user['avatar'];
         return $this->render('index',['nickname'=>$nickname,'avatar'=>$avatar]);
