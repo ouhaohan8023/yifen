@@ -235,7 +235,7 @@ $this->title = '个人中心';
     <section class="foot-bg">
         <div class="foot-lin1">
             <ul class="lin1list">
-                <li onclick="redirectAddress('yi-coupon/index') ">
+                <li onclick="redirectAddress('../yi-coupon/index') ">
                     <img src="../../web/images/index-coupon.png">
                     <p>优惠券</p>
                 </li>
