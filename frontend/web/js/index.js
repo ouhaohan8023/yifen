@@ -4,7 +4,7 @@
 $(document).ready(function(){
 	var phone = $('#phone').val();
 	var kd = $('#kd').val();
-	var jifen = $('#integral-num').val();
+	var jifen = $('#integral-num').html();
 	//window.location.href="../site/newindex";
 	if(phone == " "&&kd==" "){
 		$('#myModal').modal({backdrop: 'static', keyboard: false})
