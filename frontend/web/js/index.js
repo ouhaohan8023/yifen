@@ -9,7 +9,7 @@ $(document).ready(function(){
 	if(phone == " "&&kd==" "){
 		$('#myModal').modal({backdrop: 'static', keyboard: false})
 	}
-
+	//
 	//if(jifen<180){
 	//	var d1 = jifen;
 	//	$('.pie_right').css({transform:"rotate("+d1+"deg)"});
@@ -123,12 +123,10 @@ $(function () {
 		var baojicircle = document.getElementById('baojicircle');
 		//总积分
 		var totle = '20000';
-		var jifen = $('#integral-num').val();
-
-		var dqnum = jifen;
-		alert(jifen);
+		var dqnum = '11592';
 
 		var num = (dqnum * 360) / totle;
+		alert(num);
 		var baojinum = '0';
 		if (baojinum == '0') {
 			$('#baojicircle').hide();
