@@ -5,7 +5,9 @@ $(document).ready(function(){
 	var phone = $('#phone').val();
 	var kd = $('#kd').val();
 	//window.location.href="../site/newindex";
-	$('#myModal').modal('show')
+	if(phone == 0&&kd==0){
+		$('#myModal').modal('show')
+	}
 });
 	function redirectHref() {
 		if ('' == "" || '' == null) {
