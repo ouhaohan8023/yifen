@@ -98,10 +98,10 @@ class SiteController extends Controller
         $user = $userService->get($openid);
         // 获取 OAuth 授权结果用户信息
 
-        var_dump($user);die;
-        $nickname = $user['name'];
-        $avatar = $user['avatar'];
-        return $this->render('index',['nickname'=>$nickname,'avatar'=>$avatar]);
+//        var_dump($user);die;
+        $nickname = $user['nickname'];
+        $headimgurl = $user['headimgurl'];
+        return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl]);
     }
 //未登陆情况下,进行授权登陆
     public function actionIn(){
