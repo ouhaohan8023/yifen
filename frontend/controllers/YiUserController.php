@@ -5,7 +5,6 @@ namespace frontend\controllers;
 use Yii;
 use app\models\YiUser;
 use app\models\YiUserSearch;
-use yii\helpers\Ouhaohan;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -64,13 +63,8 @@ class YiUserController extends Controller
      */
     public function actionCreate()
     {
-        if(isset($_GET['code'])){
-            $openid = Ouhaohan::getopenid();
-        }else{
-            Ouhaohan::getcurl('http://www.ohhcms.com/yi-user/create');
-        }
-        var_dump($openid);die;
         $model = new YiUser();
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->u_id]);
         } else {

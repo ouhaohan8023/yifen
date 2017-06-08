@@ -32,11 +32,8 @@ class YiUser extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['u_openid', 'u_name', 'u_wx_name', 'u_phone', 'u_kd', 'u_time'], 'required'],
-            [['u_phone', 'u_kd'], 'integer'],
-            [['u_last_time'], 'safe'],
+            [['u_openid', 'u_wx_name'], 'required'],
             [['u_openid', 'u_wx_name'], 'string', 'max' => 255],
-            [['u_name', 'u_time'], 'string', 'max' => 50],
         ];
     }
 

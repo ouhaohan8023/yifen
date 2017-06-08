@@ -196,7 +196,7 @@ $this->title = 'My Yii Application';
 
         </div>
         <div class="head-cardnumber">
-            <span id="qrcode2">会员卡号&nbsp;&nbsp;&nbsp;<a><?php ?>></a></span>
+            <span id="qrcode2">会员卡号&nbsp;&nbsp;&nbsp;<a><?php if($number != ""){echo $number;}else{echo '<a>请点击绑定</a>';}?>></a></span>
             <span><b id="qrcode1"><?php if($nickname!=""){
                         echo $nickname;
                     } ?></b><i><img src="../../web/images/qrcode.png" id="qrcode"></i></span>

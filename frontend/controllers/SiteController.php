@@ -107,8 +107,13 @@ class SiteController extends Controller
             $model->u_openid = $openid;
             $model->u_wx_name = $nickname;
             $model->save();
+            if(!$model->save()) {
+                var_dump($model->errors);die;
+            }else{
+                var_dump($model->u_id);die;
+            }
         }
-        return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl]);
+        return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl,'number'=>$model->u_id]);
     }
 //未登陆情况下,进行授权登陆
     public function actionIn(){
