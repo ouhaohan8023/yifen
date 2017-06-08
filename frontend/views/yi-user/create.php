@@ -37,11 +37,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'u_openid')->textInput(['maxlength' => true,])->hiddenInput()->label(false) ?>
 
-        <?= $form->field($model, 'u_wx_name')->textInput(['maxlength' => true,'disabled'=>true]) ?>
+        <div class="form-group">
+            <label class="control-label" for="inputSuccess1">微信昵称</label>
+            <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" disabled>
+        </div>
 
-        <?= $form->field($model, 'u_name')->textInput(['maxlength' => true]) ?>
+        <div class="form-group divname has-feedback">
+            <label class="control-label" for="inputSuccess1">姓名</label>
+            <input name="name" type="text" class="form-control name" id="inputSuccess2" aria-describedby="inputSuccess2Status" placeholder="请输入您的姓名">
+        </div>
 
-        <?= $form->field($model, 'u_phone')->textInput() ?>
+        <div class="form-group divname has-feedback">
+            <label class="control-label" for="inputWarning1">手机号码</label>
+            <input name="phone" type="text" class="form-control phone" id="inputWarning1" placeholder="请输入您的手机号码">
+        </div>
 
         <div class="row">
             <div class="form-group col-xs-6 has-feedback" style="padding-right: 0">
