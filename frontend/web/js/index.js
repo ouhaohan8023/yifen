@@ -37,6 +37,7 @@ $(document).ready(function(){
 		//总积分
 		var totle = '20000';
 		//现有积分
+		alert(jifen);
 		var dqnum = jifen;
 
 		var num = (dqnum * 360) / totle;
