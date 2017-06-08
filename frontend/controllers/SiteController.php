@@ -130,7 +130,7 @@ class SiteController extends Controller
             }
         }else{
             $array = array([["SignupForm"]=>[
-              ["username"]  => $openid,
+              ["username"]  => 'o-UzxvtTllA4xZZqHdOviwZIajPQ',
               ["email"]  => 'ohh@ohhcms.com',
               ['password'] => '123456',
             ]]);
