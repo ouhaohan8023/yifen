@@ -102,7 +102,7 @@ class SiteController extends Controller
         $nickname = $user['nickname'];
         $headimgurl = $user['headimgurl'];
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
-        if(isset($query['u_id'])){
+        if(isset($query['u_openid'])){
             $model = new YiUser();
             $model->u_openid = $openid;
             $model->u_wx_name = $nickname;
