@@ -4,9 +4,8 @@
 $(document).ready(function(){
 	var phone = $('#phone').val();
 	var kd = $('#kd').val();
-	alert(kd);
 	//window.location.href="../site/newindex";
-	if(phone == NULL && kd==NULL){
+	if(phone == ""&&kd==""){
 		$('#myModal').modal({backdrop: 'static', keyboard: false})
 	}
 
