@@ -10,7 +10,7 @@ $(document).ready(function(){
 		$('#myModal').modal({backdrop: 'static', keyboard: false})
 	}
 
-	if(jifen>180){
+	if(jifen<180){
 		var d1 = jifen;
 		$('.pie_right').css({transform:"rotate("+d1+"deg)"});
 	}else{
