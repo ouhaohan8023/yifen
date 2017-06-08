@@ -143,6 +143,7 @@ class SiteController extends Controller
                     return $this->goHome();
                 }
             }else{
+                var_dump('111');
                 var_dump($model->errors);die;
             }
         }
