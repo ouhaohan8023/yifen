@@ -4,10 +4,7 @@
 $(document).ready(function(){
 	var phone = $('#phone').val();
 	var kd = $('#kd').val();
-
-	if(kd==0&&phone==0){
-		$('#myModal').modal('show');
-	}
+	
 });
 	function redirectHref() {
 		if ('' == "" || '' == null) {
