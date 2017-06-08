@@ -10,15 +10,15 @@ $(document).ready(function(){
 		$('#myModal').modal({backdrop: 'static', keyboard: false})
 	}
 
-	if(jifen<180){
-		var d1 = jifen;
-		$('.pie_right').css({transform:"rotate("+d1+"deg)"});
-	}else{
-		var d2 = jifen-180;
-		$('.pie_left').css({transform:"rotate(180deg)"});
-		$('.pie_right').css({transform:"rotate("+d2+"deg)"});
-
-	}
+	//if(jifen<180){
+	//	var d1 = jifen;
+	//	$('.pie_right').css({transform:"rotate("+d1+"deg)"});
+	//}else{
+	//	var d2 = jifen-180;
+	//	$('.pie_left').css({transform:"rotate(180deg)"});
+	//	$('.pie_right').css({transform:"rotate("+d2+"deg)"});
+	//
+	//}
 
 	$('#bangding').click(function(){
 		window.location.href="../site/newindex";
@@ -123,7 +123,7 @@ $(function () {
 		var baojicircle = document.getElementById('baojicircle');
 		//总积分
 		var totle = '20000';
-		var dqnum = '11592';
+		var dqnum = '10000';
 
 		var num = (dqnum * 360) / totle;
 		var baojinum = '0';
@@ -137,7 +137,7 @@ $(function () {
 
 		if (num <= 180) {
 			window.setTimeout(function () {
-				right.style.webkitTransform = "rotate(" + num + "deg)";
+				right.style.webkitTransform = "rotate(" + 0 + "deg)";
 				movecircular.style.webkitTransform = "rotate(" + num + "deg)";
 
 				cardlv.style.webkitTransform = "rotate(" + (-num) + "deg)";
