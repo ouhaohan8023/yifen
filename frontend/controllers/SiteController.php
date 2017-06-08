@@ -101,6 +101,13 @@ class SiteController extends Controller
 //        var_dump($user);die;
         $nickname = $user['nickname'];
         $headimgurl = $user['headimgurl'];
+        $query = YiUser::find()->where(['u_openid'=>$openid])->one();
+        if(isset($query['u_id'])){
+            $model = new YiUser();
+            $model->u_openid = $openid;
+            $model->u_wx_name = $nickname;
+            $model->save();
+        }
         return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl]);
     }
 //未登陆情况下,进行授权登陆
