@@ -123,10 +123,10 @@ $(function () {
 		var baojicircle = document.getElementById('baojicircle');
 		//总积分
 		var totle = '20000';
-		var dqnum = '11592';
+		var dqnum = '16000';
 
 		var num = (dqnum * 360) / totle;
-		alert(num);
+		//alert(num);
 		var baojinum = '0';
 		if (baojinum == '0') {
 			$('#baojicircle').hide();
