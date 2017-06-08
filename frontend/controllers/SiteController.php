@@ -112,6 +112,7 @@ class SiteController extends Controller
 //        die;
 //获得openid
         $openid = $user['id'];
+        var_dump($openid);die;
         $name = $user['name'];
         $avatar = $user['avatar'];
         $data = User::find()->where(['username'=>$openid])->one();
