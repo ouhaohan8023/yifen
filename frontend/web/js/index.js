@@ -4,7 +4,7 @@
 $(document).ready(function(){
 	var phone = $('#phone').val();
 	var kd = $('#kd').val();
-	
+	window.location.href="../site/newindex";
 });
 	function redirectHref() {
 		if ('' == "" || '' == null) {
