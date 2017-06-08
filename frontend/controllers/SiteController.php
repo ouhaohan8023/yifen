@@ -128,8 +128,20 @@ class SiteController extends Controller
                 return $this->goBack();
             }
         }else{
-            $model = new User();
-            $model->username = $openid;
+            $array = [
+                ["SignupForm"]=>[
+                  ["username"]  => $openid,
+                    ["email"]  => 'ohh@ohhcms.com',
+                    ['password'] => '123456',
+                ]
+            ];
+            $model = new SignupForm();
+            $model->load($array);
+            if ($user = $model->signup()) {
+                if (Yii::$app->getUser()->login($user)) {
+                    return $this->goHome();
+                }
+            }
         }
 //判断数据库中有无存储
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
@@ -248,7 +260,6 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
-            var_dump(Yii::$app->request->post());die;
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome();
