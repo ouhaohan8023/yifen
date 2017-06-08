@@ -51,6 +51,7 @@ class YiUserController extends Controller
      */
     public function actionView($id)
     {
+        var_dump($this->findModel($id));die;
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -70,8 +71,8 @@ class YiUserController extends Controller
         } else {
 //            var_dump(Yii::$app->user->isGuest);die;
 //            var_dump(Yii::$app->user->identity->username);die;
-            $model->YiUser->u_openid = Yii::$app->user->identity->username;
-            $model->YiUser->u_wx_name = YiUser::find()->where(['u_openid'=>$model->u_openid])->select('u_wx_name')->one();
+            $model->u_openid = Yii::$app->user->identity->username;
+            $model->u_wx_name = YiUser::find()->where(['u_openid'=>$model->u_openid])->select('u_wx_name')->one();
             return $this->render('create', [
                 'model' => $model,
             ]);
