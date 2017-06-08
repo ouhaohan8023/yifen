@@ -67,6 +67,7 @@ class YiUserController extends Controller
         $model = $this->findModel($query['u_id']);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            var_dump(Yii::$app->request->post());die;
             if(!$model->save()) {
                 var_dump($model->errors);die;
             }else{
