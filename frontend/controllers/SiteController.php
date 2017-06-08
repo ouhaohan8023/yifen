@@ -102,7 +102,7 @@ class SiteController extends Controller
         $nickname = $user['nickname'];
         $headimgurl = $user['headimgurl'];
         $query = YiUser::find()->where(['u_openid'=>$openid])->one();
-        if(isset($query['u_openid'])){
+        if(!isset($query['u_openid'])){
             $model = new YiUser();
             $model->u_openid = $openid;
             $model->u_wx_name = $nickname;
@@ -113,7 +113,7 @@ class SiteController extends Controller
                 var_dump($model->u_id);die;
             }
         }
-        return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl,'number'=>$model->u_id]);
+        return $this->render('index',['nickname'=>$nickname,'headimgurl'=>$headimgurl]);
     }
 //未登陆情况下,进行授权登陆
     public function actionIn(){
