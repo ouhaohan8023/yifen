@@ -20,6 +20,7 @@ $(document).ready(function(){
 	//
 	//}
 
+	//start————————
 	var cardlvtext=$('#cardlv').text();
 	if(cardlvtext=='至尊钻石卡'){
 		$('#cardlv').text('至尊卡');
@@ -36,7 +37,7 @@ $(document).ready(function(){
 		//总积分
 		var totle = '20000';
 		//现有积分
-		var dqnum = '16000';
+		var dqnum = jifen;
 
 		var num = (dqnum * 360) / totle;
 		//alert(num);
@@ -181,7 +182,7 @@ $(document).ready(function(){
 			}
 		});
 	}
-
+	//end——————————————
 
 
 	$('#bangding').click(function(){
