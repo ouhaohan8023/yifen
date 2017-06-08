@@ -67,7 +67,7 @@ class YiUserController extends Controller
         $model = $this->findModel($query['u_id']);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            YiUser::updateAll(['u_name'=>$_POST['u_name'],'u_phone'=>$_POST['u_phone']],['u_openid'=>Yii::$app->user->identity->username]);
+            YiUser::updateAll(['u_name'=>$_POST['YiUser']['u_name'],'u_phone'=>$_POST['YiUser']['u_phone']],['u_openid'=>Yii::$app->user->identity->username]);
 //            var_dump(Yii::$app->request->post());die;
 //            if(!$model->save()) {
 //                var_dump($model->errors);die;
