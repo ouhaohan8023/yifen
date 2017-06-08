@@ -86,7 +86,7 @@ class SiteController extends Controller
             // 这里不一定是return，如果你的框架action不是返回内容的话你就得使用
              $oauth->redirect()->send();//跳转到in
         }else{
-            return $this->redirect(['home', 'openid' => Yii::$app->user->username]);
+            return $this->redirect(['home', 'openid' => Yii::$app->user->identity->username]);
 //            return $this->render('index');
         }
 //        return $this->render('index');
