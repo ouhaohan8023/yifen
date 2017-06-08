@@ -197,8 +197,8 @@ $this->title = 'My Yii Application';
         </div>
         <div class="head-cardnumber">
             <span id="qrcode2">会员卡号</span>
-            <span><b id="qrcode1"><?php if(!empty($_SESSION['openid'])){
-                        echo $_SESSION['openid'];
+            <span><b id="qrcode1"><?php if($nickname!=""){
+                        echo $nickname;
                     } ?></b><i><img src="../../web/images/qrcode.png" id="qrcode"></i></span>
         </div>
         <div class="head-integral">
