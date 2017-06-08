@@ -21,6 +21,8 @@ class YiUser extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public $u_name;
+    public $u_phone;
     public static function tableName()
     {
         return 'yi_user';
