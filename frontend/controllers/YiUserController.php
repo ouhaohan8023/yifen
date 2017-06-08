@@ -66,6 +66,7 @@ class YiUserController extends Controller
         $query = YiUser::find()->where(['u_openid'=>Yii::$app->user->identity->username])->one();
         $model = $this->findModel($query['u_id']);
 
+        YiUser::updateAll(['u_name'=>121],['u_openid'=>Yii::$app->user->identity->username]);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             var_dump(Yii::$app->request->post());die;
             if(!$model->save()) {
