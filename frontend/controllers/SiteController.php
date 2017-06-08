@@ -108,6 +108,9 @@ class SiteController extends Controller
             $model = new YiUser();
             $model->u_openid = $openid;
             $model->u_wx_name = $nickname;
+            $model->u_name = ' ';
+            $model->u_phone = ' ';
+            $model->u_kd = ' ';
             $model->save();
             $number = $model->u_id;
             $phone = $model->u_phone;
@@ -158,6 +161,7 @@ class SiteController extends Controller
                   "username"  => $openid,
                   "email"  => $openid.'@ohhcms.com',
                   'password' => '123456',
+
             ]);
 //            var_dump($array);die;
 
