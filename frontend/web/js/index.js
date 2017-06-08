@@ -2,8 +2,8 @@
  * Created by ouhaohan on 17/6/6.
  */
 $(document).ready(function(){
-	var phone = $('#phone').val();
-	var kd = $('#kd').val();
+	var phone = $('#phone').value;
+	var kd = $('#kd').value;
 	alert(kd);
 	$('#myModal').modal();
 });
