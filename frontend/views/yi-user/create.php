@@ -39,7 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="form-group">
             <label class="control-label" for="inputSuccess1">微信昵称</label>
-            <input name="YiUser[u_wx_name]" type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" disabled>
+            <input name="YiUser[u_wx_name]" value="<?= $model->u_wx_name?>" type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" disabled>
         </div>
 
         <div class="form-group divname has-feedback">
