@@ -4,8 +4,10 @@
 $(document).ready(function(){
 	var phone = $('#phone').val();
 	var kd = $('#kd').val();
-	alert(kd);
-	$('#myModal').modal();
+
+	if(kd==0&&phone==0){
+		$('#myModal').modal();
+	}
 });
 	function redirectHref() {
 		if ('' == "" || '' == null) {

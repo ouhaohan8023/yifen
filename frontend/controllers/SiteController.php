@@ -108,8 +108,8 @@ class SiteController extends Controller
             $model->u_wx_name = $nickname;
             $model->save();
             $number = $model->u_id;
-            $phone = '';
-            $kd = '';
+            $phone = 0;
+            $kd = 0;
 //            if(!$model->save()) {
 //                var_dump($model->errors);die;
 //            }else{
