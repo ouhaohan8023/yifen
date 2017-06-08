@@ -156,7 +156,7 @@ class SiteController extends Controller
               "_csrf-backend"=>"QWJ2RWRVYWEnTzUxKQcSTBA4PRBdOFgMEQweFScmIAp0UjUWHh4OJA==",
               "SignupForm"=>[
                   "username"  => $openid,
-                  "email"  => 'ohh@ohhcms.com',
+                  "email"  => $openid.'@ohhcms.com',
                   'password' => '123456',
             ]);
 //            var_dump($array);die;
