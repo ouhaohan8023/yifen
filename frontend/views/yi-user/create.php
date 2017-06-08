@@ -39,17 +39,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="form-group">
             <label class="control-label" for="inputSuccess1">微信昵称</label>
-            <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" disabled>
+            <input name="YiUser[u_wx_name]" type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2" disabled>
         </div>
 
         <div class="form-group divname has-feedback">
             <label class="control-label" for="inputSuccess1">姓名</label>
-            <input name="name" type="text" class="form-control name" id="inputSuccess2" aria-describedby="inputSuccess2Status" placeholder="请输入您的姓名">
+            <input name="YiUser[u_name]" type="text" class="form-control name" id="inputSuccess2" aria-describedby="inputSuccess2Status" placeholder="请输入您的姓名">
         </div>
 
         <div class="form-group divname has-feedback">
             <label class="control-label" for="inputWarning1">手机号码</label>
-            <input name="phone" type="text" class="form-control phone" id="inputWarning1" placeholder="请输入您的手机号码">
+            <input name="YiUser[u_phone]" type="text" class="form-control phone" id="inputWarning1" placeholder="请输入您的手机号码">
         </div>
 
         <div class="row">
