@@ -212,8 +212,8 @@ $this->title = '个人中心';
                     <span class="cardlv" onclick="showScoreMsg()" id="cardlv" style="top: -30px; left: 40px; transform: rotate(-208.656deg); display: inline;" hidden="hidden">普卡</span>
                 </div>
                 <div id="baojicircle" class="baojicircle" style="display: none; transform: rotate(0deg);"><span class="baoji" id="baoji" style="color: rgb(253, 228, 63); transform: rotate(0deg); top: -30px; left: -30px;" onclick="showBaoJiMsg()">保级</span></div>
-                <div class="pie_left"><div class="left" id="left" style="transition: -webkit-transform 1000ms linear 1000ms; "></div></div>
-                <div class="pie_right"><div class="right" id="right" style="transition: -webkit-transform 1000ms linear; "></div></div>
+                <div class="pie_left"><div class="left" id="left" style="transition: -webkit-transform 1000ms linear 1000ms; transform: rotate(0deg);"></div></div>
+                <div class="pie_right"><div class="right" id="right" style="transition: -webkit-transform 1000ms linear; transform: rotate(0deg);"></div></div>
                 <div class="integral-box" onclick="window.open('/ui_membercenter/memberpoints')">
                     <span>服务金金额</span>
                     <span id="integral-num"><?= $jifen?></span>
