@@ -123,7 +123,7 @@ $(function () {
 		var baojicircle = document.getElementById('baojicircle');
 		//总积分
 		var totle = '20000';
-		var dqnum = '10000';
+		var dqnum = '500';
 
 		var num = (dqnum * 360) / totle;
 		var baojinum = '0';
@@ -137,7 +137,7 @@ $(function () {
 
 		if (num <= 180) {
 			window.setTimeout(function () {
-				right.style.webkitTransform = "rotate(60deg)";
+				right.style.webkitTransform = "rotate(" + num + "deg)";
 				movecircular.style.webkitTransform = "rotate(" + num + "deg)";
 
 				cardlv.style.webkitTransform = "rotate(" + (-num) + "deg)";
