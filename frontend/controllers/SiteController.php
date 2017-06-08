@@ -146,7 +146,9 @@ class SiteController extends Controller
               ]);
             $model = new LoginForm();
             if ($model->load($array) && $model->login()) {
-                return $this->goBack();
+                var_dump('登陆成功');die;
+            }else{
+                var_dump('登陆失败');die;
             }
         }else{
             $array = array(
