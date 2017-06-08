@@ -128,13 +128,12 @@ class SiteController extends Controller
                 return $this->goBack();
             }
         }else{
-            $array = [
-                ["SignupForm"]=>[
-                  ["username"]  => $openid,
-                    ["email"]  => 'ohh@ohhcms.com',
-                    ['password'] => '123456',
-                ]
-            ];
+            $array = array([["SignupForm"]=>[
+              ["username"]  => $openid,
+              ["email"]  => 'ohh@ohhcms.com',
+              ['password'] => '123456',
+            ]]);
+           
             $model = new SignupForm();
             $model->load($array);
             if ($user = $model->signup()) {
