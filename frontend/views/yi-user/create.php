@@ -54,12 +54,6 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
         </div>
 
-<!--        --><?//= $form->field($model, 'u_kd')->textInput() ?>
-
-<!--        --><?//= $form->field($model, 'u_time')->textInput(['maxlength' => true]) ?>
-
-<!--        --><?//= $form->field($model, 'u_last_time')->textInput() ?>
-
         <div class="form-group">
             <?= Html::submitButton($model->isNewRecord ? '绑定' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         </div>
