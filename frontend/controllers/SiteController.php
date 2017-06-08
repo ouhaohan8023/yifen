@@ -146,8 +146,12 @@ class SiteController extends Controller
               ]);
             $model = new LoginForm();
             if ($model->load($array) && $model->login()) {
+                header("Content-type:text/html;charset=utf-8");
+
                 var_dump('登陆成功');die;
             }else{
+                header("Content-type:text/html;charset=utf-8");
+
                 var_dump('登陆失败');die;
             }
         }else{
