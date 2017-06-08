@@ -71,7 +71,7 @@ class YiUserController extends Controller
 //            var_dump(Yii::$app->user->isGuest);die;
 //            var_dump(Yii::$app->user->identity->username);die;
             $model->u_openid = Yii::$app->user->identity->username;
-            $model->u_wx_name = YiUser::find()->where(['u_openid'=>$model->u_openid])->select('u_wx_name')->one();
+            $model->u_wx_name = YiUser::find()->where(['u_openid'=>$model->u_openid])->one()['u_wx_name'];
             return $this->render('create', [
                 'model' => $model,
             ]);
