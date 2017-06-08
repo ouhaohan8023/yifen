@@ -67,6 +67,11 @@ class YiUserController extends Controller
         $model = $this->findModel($query['u_id']);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            if(!$model->save()) {
+                var_dump($model->errors);die;
+            }else{
+                var_dump($model->u_id);die;
+            }
             return $this->redirect(['site/home', 'openid' => $model->u_openid]);
         } else {
 //            var_dump(Yii::$app->user->isGuest);die;
