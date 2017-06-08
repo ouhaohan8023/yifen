@@ -123,7 +123,7 @@ $(function () {
 		var baojicircle = document.getElementById('baojicircle');
 		//总积分
 		var totle = '20000';
-		var dqnum = '4000';
+		var dqnum = '5000';
 
 		var num = (dqnum * 360) / totle;
 		var baojinum = '0';
