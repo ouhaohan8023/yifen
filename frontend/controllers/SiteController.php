@@ -139,6 +139,8 @@ class SiteController extends Controller
     }
 //    新用户入口
     public function actionNewindex(){
+
+
         return $this->render('newindex');
     }
 //    onlyphone入口
