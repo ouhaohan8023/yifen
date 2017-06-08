@@ -121,8 +121,11 @@ $(function () {
 		var baoji = document.getElementById('baoji');
 		var movecircular = document.getElementById('movecircular');
 		var baojicircle = document.getElementById('baojicircle');
+		var jifen = document.getElementById('integral-num').value;
+		alert(jifen);
 		//总积分
 		var totle = '20000';
+		//现有积分
 		var dqnum = '16000';
 
 		var num = (dqnum * 360) / totle;
