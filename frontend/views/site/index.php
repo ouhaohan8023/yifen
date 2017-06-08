@@ -289,7 +289,7 @@ $this->title = '个人中心';
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">绑定</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="font-size: 18px">
                 请先绑定您的信息,这样我们才能更好的为您服务哟!
             </div>
             <div class="modal-footer">
