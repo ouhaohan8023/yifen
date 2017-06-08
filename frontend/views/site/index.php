@@ -279,17 +279,20 @@ $this->title = 'My Yii Application';
     <!--下半部-->
     <input id="phone" value="<?= $phone?>" hidden="hidden"/>
     <input id="kd" value="<?= $kd?>" />
+</article>
 
-    <!-- Large modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
 
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                ...
-            </div>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            ...
         </div>
     </div>
+</div>
+
+
 
 <?php
 $this->registerJsFile("/yifen/frontend/web/js/index.js", ["depends" => [\yii\web\JqueryAsset::className()]],\yii\web\View::POS_END);
