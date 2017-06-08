@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = '个人中心';
 ?>
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/common-member.css">
@@ -278,7 +278,7 @@ $this->title = 'My Yii Application';
     </section>
     <!--下半部-->
     <input id="phone" value="<?= $phone?>" hidden="hidden"/>
-    <input id="kd" value="<?= $kd?>" />
+    <input id="kd" value="<?= $kd?>" hidden="hidden" />
 </article>
 
 <!-- Modal -->
@@ -294,7 +294,7 @@ $this->title = 'My Yii Application';
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">前往绑定!</button>
+                <button id="bangding" type="button" class="btn btn-primary">前往绑定!</button>
             </div>
         </div>
     </div>

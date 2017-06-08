@@ -8,6 +8,10 @@ $(document).ready(function(){
 	if(phone == 0&&kd==0){
 		$('#myModal').modal('show')
 	}
+
+	$('#bangding').click(function(){
+		window.location.href="../site/newindex";
+	})
 });
 	function redirectHref() {
 		if ('' == "" || '' == null) {
