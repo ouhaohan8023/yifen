@@ -8,6 +8,7 @@ use app\models\YiUserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ClsCrmapi;
 
 /**
  * YiUserController implements the CRUD actions for YiUser model.
@@ -84,6 +85,12 @@ class YiUserController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionSms(){
+        $model = new ClsCrmapi('13303463126','测试','111222','BC030000','SC030001','18035194111');
+        $model->send_meg();
+
     }
 
     /**
