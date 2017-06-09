@@ -91,30 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1 style="margin-left: 15px"><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-<!--    <p>-->
-<!--        --><?//= Html::a('Create Yi Coupon', ['create'], ['class' => 'btn btn-success']) ?>
-<!--    </p>-->
-<!--    --><?//= GridView::widget([
-//        'dataProvider' => $dataProvider,
-//        'filterModel' => $searchModel,
-//        'columns' => [
-//            ['class' => 'yii\grid\SerialColumn'],
-//
-//            'c_id',
-//            'c_name',
-//            'c_value',
-//            'c_txt',
-//            'c_img',
-//            // 'c_time_start',
-//            // 'c_time_end',
-//            // 'c_time',
-//            // 'c_last_time',
-//
-//            ['class' => 'yii\grid\ActionColumn'],
-//        ],
-//    ]); ?>
-
+    
     <div class="row">
         <div class="coupon-box col-xs-9" style="padding-right: 0" >
             <div class="coupon cp-bg-color-1" style="padding-left: 0;">
