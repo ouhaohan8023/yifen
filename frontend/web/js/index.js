@@ -190,6 +190,9 @@ $(document).ready(function(){
 		window.location.href="../site/newindex";
 	})
 });
+function redirectShop(){
+	window.location.href = "../yi-shop/index";
+}
 	function redirectHref() {
 		if ('' == "" || '' == null) {
 			window.location.href = "/UI_MemberCenter/MyPersonBaseInfo?openid=" + $('#OpenId').val();

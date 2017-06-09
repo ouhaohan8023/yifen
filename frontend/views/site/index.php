@@ -253,7 +253,7 @@ $this->title = '个人中心';
             </ul>
         </div>
         <div class="foot-lin2">
-            <div class="nav1" id="nav1">
+            <div class="nav1" id="nav1" onclick="redirectShop()">
                 <img src="../../web/images/index-gift.png">
                 <span>翼粉服务</span>
             </div>
