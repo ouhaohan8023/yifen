@@ -1,19 +1,18 @@
 <?php
 
-namespace frontend\controllers;
+namespace app\controllers;
 
 use Yii;
-use app\models\YiUser;
-use app\models\YiUserSearch;
+use app\models\YiShop;
+use app\models\YiShopSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\helpers\ClsCrmapi;
 
 /**
- * YiUserController implements the CRUD actions for YiUser model.
+ * YiShopController implements the CRUD actions for YiShop model.
  */
-class YiUserController extends Controller
+class YiShopController extends Controller
 {
     /**
      * @inheritdoc
@@ -31,12 +30,12 @@ class YiUserController extends Controller
     }
 
     /**
-     * Lists all YiUser models.
+     * Lists all YiShop models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new YiUserSearch();
+        $searchModel = new YiShopSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,7 +45,7 @@ class YiUserController extends Controller
     }
 
     /**
-     * Displays a single YiUser model.
+     * Displays a single YiShop model.
      * @param integer $id
      * @return mixed
      */
@@ -58,42 +57,25 @@ class YiUserController extends Controller
     }
 
     /**
-     * Creates a new YiUser model.
+     * Creates a new YiShop model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $query = YiUser::find()->where(['u_openid'=>Yii::$app->user->identity->username])->one();
-        $model = $this->findModel($query['u_id']);
+        $model = new YiShop();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            YiUser::updateAll(['u_name'=>$_POST['YiUser']['u_name'],'u_phone'=>$_POST['YiUser']['u_phone']],['u_openid'=>Yii::$app->user->identity->username]);
-//            var_dump(Yii::$app->request->post());die;
-//            if(!$model->save()) {
-//                var_dump($model->errors);die;
-//            }else{
-//                var_dump($model->u_id);die;
-//            }
-            return $this->redirect(['site/home', 'openid' => $model->u_openid]);
+            return $this->redirect(['view', 'id' => $model->s_id]);
         } else {
-//            var_dump(Yii::$app->user->isGuest);die;
-//            var_dump(Yii::$app->user->identity->username);die;
-//            $model->u_openid = Yii::$app->user->identity->username;
-//            $model->u_wx_name = YiUser::find()->where(['u_openid'=>$model->u_openid])->one()['u_wx_name'];
             return $this->render('create', [
                 'model' => $model,
             ]);
         }
     }
 
-    public function actionSms(){
-        $model = new ClsCrmapi('13303463126','测试','111222','BC030000','SC030001','18035194111');
-        $model->send_meg();
-    }
-
     /**
-     * Updates an existing YiUser model.
+     * Updates an existing YiShop model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -103,7 +85,7 @@ class YiUserController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->u_id]);
+            return $this->redirect(['view', 'id' => $model->s_id]);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -112,7 +94,7 @@ class YiUserController extends Controller
     }
 
     /**
-     * Deletes an existing YiUser model.
+     * Deletes an existing YiShop model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -125,15 +107,15 @@ class YiUserController extends Controller
     }
 
     /**
-     * Finds the YiUser model based on its primary key value.
+     * Finds the YiShop model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return YiUser the loaded model
+     * @return YiShop the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = YiUser::findOne($id)) !== null) {
+        if (($model = YiShop::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
