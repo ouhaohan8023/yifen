@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1 style="margin-left: 15px"><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    
+
     <div class="row">
         <div class="coupon-box col-xs-9" style="padding-right: 0" >
             <div class="coupon cp-bg-color-1" style="padding-left: 0;">

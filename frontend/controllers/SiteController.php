@@ -111,6 +111,8 @@ class SiteController extends Controller
             $model->u_name = ' ';
             $model->u_phone = ' ';
             $model->u_kd = ' ';
+            $model->u_time = date('Y-m-d H:i:s',time());
+
             $model->save();
             $number = $model->u_id;
             $phone = $model->u_phone;
